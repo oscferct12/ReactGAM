@@ -1,0 +1,8 @@
+.Container {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    color : #928285;
+    position: fixed
+
+}

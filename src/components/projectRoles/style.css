@@ -1,0 +1,17 @@
+.container{
+    display: 'flex';
+    flex-wrap:'wrap';
+  }
+
+  .textField{
+    margin-left: unit;
+    margin-right: unit;
+  }
+
+  .dense{
+    margin-top:16
+  }
+
+  .menu{
+    width: 200
+  }
