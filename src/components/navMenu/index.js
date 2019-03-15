@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import HomeIcon from '@material-ui/icons/Home';
 import {
-    NavLink,
     HashRouter
 } from "react-router-dom";
 
@@ -17,6 +17,12 @@ class NavMenu extends Component {
             isOpen: true,
             value: ''
         };
+
+        this.goTo = this.goTo.bind(this);
+    }
+
+    goTo(path) {
+        this.props.history.push(path);
     }
 
     render() {
@@ -27,8 +33,8 @@ class NavMenu extends Component {
         return (
             <HashRouter>
                 <div>
-                    <Tabs onChange={this.handleChange} variant="scrollable" scrollButtons="off">
-                        <Tab label="Home" icon={<HomeIcon />}/>
+                    <Tabs>
+                        <Tab label="Home" icon={<HomeIcon />} onClick={() =>  this.goTo(`/dashboard`)}/>
                     </Tabs>
                 </div>
             </HashRouter>
@@ -36,4 +42,5 @@ class NavMenu extends Component {
     }
 }
 
-export default NavMenu;
+
+export default withRouter(NavMenu);
